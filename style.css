@@ -38,10 +38,6 @@ body{
     align-items: center;
 }
 
-#buttons div:focus{
-    background-color: aqua;
-}
-
 .button {
     width: 90px;
     height: 90px;
@@ -51,6 +47,10 @@ body{
     justify-content: center;
     font-size: 2rem;
     cursor: pointer;
+}
+
+.button:hover{
+    opacity: 0.8;
 }
 
 .button-gray {
