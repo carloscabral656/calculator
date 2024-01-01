@@ -11,11 +11,9 @@ const observer = new MutationObserver(function(mutationsList) {
         }
     }
 });
-
-// Configura o observer para observar mudanças no texto e na estrutura da div
 observer.observe(visor, { attributes: true, childList: true, subtree: true });
 
-
+// 
 numeros.forEach((e) => {
     e.addEventListener("click", handleNumbers);
 });
@@ -26,12 +24,17 @@ numeros.forEach((e) => {
 */
 function handleNumbers(e){
     let currentValue = visor.innerText;
-    let nextValue = e.target.innerText;
-    currentValue = new Number(currentValue + nextValue).valueOf();
-    visor.innerText = currentValue;
+    if(currentValue.length <= 20){
+        let nextValue = e.target.innerText;
+        currentValue = new Number(currentValue + nextValue).valueOf();
+        visor.innerText = currentValue;
+    }
 }
 
-
+/**
+ * 
+ * 
+*/
 function updateTextSizeScreen(){
     if(visor.innerText.length >= 15){
         visor.style.fontSize = '1rem';
